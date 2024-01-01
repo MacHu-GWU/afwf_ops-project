@@ -6,6 +6,7 @@ import dataclasses
 from pathlib_mate import T_PATH_ARG, Path
 
 from .compat import cached_property
+from .logger import logger
 
 
 @dataclasses.dataclass
@@ -89,6 +90,10 @@ class ProjectContext:
         self.path_project_icon_png.remove_if_exists()
 
 
+@logger.emoji_block(
+    msg="Build Workflow",
+    emoji="🔨",
+)
 def build_wf(
     path_bin_pip: T_PATH_ARG,
     wf_ctx: WorkflowContext,
@@ -105,21 +110,30 @@ def build_wf(
     wf_ctx.pre_build()
     proj_ctx.pre_build()
 
+    logger.info(f"copy main.py to {wf_ctx.path_workflow_main_py}")
     proj_ctx.path_project_main_py.copyto(wf_ctx.path_workflow_main_py)
 
+    logger.info(f"install dependencies to {wf_ctx.dir_workflow_lib}")
     with proj_ctx.dir_project_root.temp_cwd():
         args = [
             f"{path_bin_pip}",
             "install",
             f"{proj_ctx.dir_project_root}",
             f"--target={wf_ctx.dir_workflow_lib}",
+            # "--quiet",
         ]
         subprocess.run(args)
 
+    logger.info(f"copy info.plist to {proj_ctx.path_project_info_plist}")
     wf_ctx.path_workflow_info_plist.copyto(proj_ctx.path_project_info_plist)
+    logger.info(f"copy icon.png to {proj_ctx.path_project_icon_png}")
     wf_ctx.path_workflow_icon_png.copyto(proj_ctx.path_project_icon_png)
 
 
+@logger.emoji_block(
+    msg="Refresh Code",
+    emoji="🔄",
+)
 def refresh_code(
     path_bin_pip: T_PATH_ARG,
     wf_ctx: WorkflowContext,
@@ -140,7 +154,10 @@ def refresh_code(
         ):
             p.remove_if_exists()
 
+    logger.info(f"copy main.py to {wf_ctx.path_workflow_main_py}")
     proj_ctx.path_project_main_py.copyto(wf_ctx.path_workflow_main_py)
+
+    logger.info(f"install {proj_ctx.package_name!r} to {wf_ctx.dir_workflow_lib}")
     with proj_ctx.dir_project_root.temp_cwd():
         args = [
             f"{path_bin_pip}",
@@ -148,5 +165,6 @@ def refresh_code(
             f"{proj_ctx.dir_project_root}",
             "--no-dependencies",
             f"--target={wf_ctx.dir_workflow_lib}",
+            # "--quiet",
         ]
         subprocess.run(args)
