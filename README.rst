@@ -1,21 +1,21 @@
 
-.. image:: https://readthedocs.org/projects/afwf-ops/badge/?version=latest
+.. .. image:: https://readthedocs.org/projects/afwf-ops/badge/?version=latest
     :target: https://afwf-ops.readthedocs.io/en/latest/
     :alt: Documentation Status
 
-.. image:: https://github.com/MacHu-GWU/afwf_ops-project/workflows/CI/badge.svg
+.. .. image:: https://github.com/MacHu-GWU/afwf_ops-project/workflows/CI/badge.svg
     :target: https://github.com/MacHu-GWU/afwf_ops-project/actions?query=workflow:CI
 
-.. image:: https://codecov.io/gh/MacHu-GWU/afwf_ops-project/branch/main/graph/badge.svg
+.. .. image:: https://codecov.io/gh/MacHu-GWU/afwf_ops-project/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/MacHu-GWU/afwf_ops-project
 
-.. image:: https://img.shields.io/pypi/v/afwf-ops.svg
+.. .. image:: https://img.shields.io/pypi/v/afwf-ops.svg
     :target: https://pypi.python.org/pypi/afwf-ops
 
-.. image:: https://img.shields.io/pypi/l/afwf-ops.svg
+.. .. image:: https://img.shields.io/pypi/l/afwf-ops.svg
     :target: https://pypi.python.org/pypi/afwf-ops
 
-.. image:: https://img.shields.io/pypi/pyversions/afwf-ops.svg
+.. .. image:: https://img.shields.io/pypi/pyversions/afwf-ops.svg
     :target: https://pypi.python.org/pypi/afwf-ops
 
 .. image:: https://img.shields.io/badge/Release_History!--None.svg?style=social
@@ -26,13 +26,13 @@
 
 ------
 
-.. image:: https://img.shields.io/badge/Link-Document-blue.svg
+.. .. image:: https://img.shields.io/badge/Link-Document-blue.svg
     :target: https://afwf-ops.readthedocs.io/en/latest/
 
-.. image:: https://img.shields.io/badge/Link-API-blue.svg
+.. .. image:: https://img.shields.io/badge/Link-API-blue.svg
     :target: https://afwf-ops.readthedocs.io/en/latest/py-modindex.html
 
-.. image:: https://img.shields.io/badge/Link-Install-blue.svg
+.. .. image:: https://img.shields.io/badge/Link-Install-blue.svg
     :target: `install`_
 
 .. image:: https://img.shields.io/badge/Link-GitHub-blue.svg
@@ -44,13 +44,13 @@
 .. image:: https://img.shields.io/badge/Link-Request_Feature-blue.svg
     :target: https://github.com/MacHu-GWU/afwf_ops-project/issues
 
-.. image:: https://img.shields.io/badge/Link-Download-blue.svg
+.. .. image:: https://img.shields.io/badge/Link-Download-blue.svg
     :target: https://pypi.org/pypi/afwf-ops#files
 
 
 Welcome to ``afwf_ops`` Documentation
 ==============================================================================
-Documentation for ``afwf_ops``.
+Alfred Workflow DevOps automation. This python package will be used in the ``bin/automation/afwf_ops/`` folder as it is to provide devops automation.
 
 
 .. _install:
